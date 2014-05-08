@@ -1,0 +1,9 @@
+jar {
+	baseName = 'jaxws-app-client'
+}
+
+dependencies {
+	compile project(':jaxws-app-common')
+}
+
+

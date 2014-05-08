@@ -1,0 +1,30 @@
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
+    apply plugin: 'maven'
+
+    group = 'com.alexbezverkhniy.jaxwsapp'
+	version = '0.1.0'
+    description = 'Template for create JAX-WS project'
+
+	jar {
+		baseName = 'jaxws-app-template'
+	}
+
+	repositories {
+		mavenCentral()
+		maven { url 'http://repo.spring.io/libs-milestone' }
+		maven { url 'https://repository.jboss.org/nexus/content/repositories/releases' }
+	}
+
+	dependencies {
+		testCompile('junit:junit:4.11')
+	}
+
+	task 'create-dirs' << {
+		sourceSets*.java.srcDirs*.each { it.mkdirs() }
+		sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+	}
+
+}

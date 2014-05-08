@@ -1,0 +1,2 @@
+include "jaxws-app-common", "jaxws-app-server", "jaxws-app-client"
+
