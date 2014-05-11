@@ -1,9 +1,24 @@
+apply plugin: 'war'
+
+def tomcatHome = 'C:/opt/apache-tomcat-7.0.53'
+
 jar {
 	baseName = 'jaxws-app-server'
 }
 
 dependencies {
 	compile project(':jaxws-app-common')
+
+    // Web
+    providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
 }
 
+task deploylocal() << {
+    println "Copy from ${buildDir}\\libs into ${tomcatHome}/webapps"
+    copy {
+        from "${buildDir}\\libs"
+        into "${tomcatHome}/webapps"
+        include '*.war'
+    }
+}
 
