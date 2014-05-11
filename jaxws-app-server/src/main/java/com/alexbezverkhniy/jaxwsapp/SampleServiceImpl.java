@@ -15,6 +15,7 @@ import javax.jws.soap.SOAPBinding;
         targetNamespace = "http://alexbezverkhniy.com/jaxwsapp/SampleService")
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public class SampleServiceImpl implements SampleService {
+
     /**
      * Sample echo method
      * @param msg echo message
