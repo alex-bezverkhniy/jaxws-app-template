@@ -10,7 +10,9 @@ import javax.jws.soap.SOAPBinding;
  *
  * Created by Alex Bezverkhniy on 11/05/2014.
  */
-@WebService
+@WebService(endpointInterface = "com.alexbezverkhniy.jaxwsapp.SampleService",
+        serviceName = "SampleService",
+        targetNamespace = "http://alexbezverkhniy.com/jaxwsapp/SampleService")
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public class SampleServiceImpl implements SampleService {
     /**
