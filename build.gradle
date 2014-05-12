@@ -20,10 +20,15 @@ subprojects {
 
 	dependencies {
         // Logging
+        compile 'ch.qos.logback:logback-classic:1.1.2'
         compile 'org.slf4j:slf4j-api:1.7.5'
+
+        testCompile 'ch.qos.logback:logback-classic:1.1.2'
+        testCompile 'org.slf4j:slf4j-api:1.7.5'
 
         // jUnit
         testCompile 'junit:junit:4.11'
+        testCompile 'org.databene:contiperf:2.2.0'
 	}
 
 	task 'create-dirs' << {
